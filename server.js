@@ -1,5 +1,7 @@
 // must require package
 const express = require("express");
+const PORT = process.env.PORT || 3001;
+
 // this instantiates the server. telling it to listen for requests
 const app = express();
 // the above two lines of code are all it takes to set up an express server
@@ -62,6 +64,6 @@ app.get("/api/animals", (req, res) => {
 // chaining listen method onto the server so that it will listen
 // this must be at the bottom of this file
 // changing the method to json lets the client know its recieving json data
-app.listen(3001, () => {
-  console.log(`API server now on port 3001!`);
-});
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+  });
